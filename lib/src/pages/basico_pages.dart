@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class BasicoPage extends StatelessWidget {
+  final estiloTitulo = TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold);
+  final estiloSubTitulo = TextStyle(fontSize: 18.0, color: Colors.grey);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -9,6 +12,25 @@ class BasicoPage extends StatelessWidget {
           Image(
             image: NetworkImage(
                 'https://fotoarte.com.uy/wp-content/uploads/2019/03/Landscape-fotoarte.jpg'),
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text('Montañas', style: estiloTitulo),
+                      SizedBox(height: 7.0),
+                      Text('Casas en una Montaña', style: estiloSubTitulo),
+                    ],
+                  ),
+                ),
+                Icon(Icons.star, color: Colors.red, size: 30.0),
+                Text('41', style: TextStyle(fontSize: 20.0))
+              ],
+            ),
           )
         ],
       ),
